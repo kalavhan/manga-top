@@ -1,3 +1,12 @@
+html {
+  background-color: #4e443e;
+}
+
+body {
+  height: 100vh;
+  min-height: 639px;
+}
+
 a {
   text-decoration: none;
 }
@@ -28,9 +37,6 @@ a:visited{
           display: flex;
             li {
               margin-right: 20px;
-                .nav-link-active {
-                  color: #fa6000;
-                }
             }
         }
     }
@@ -39,5 +45,8 @@ a:visited{
       display: flex;
       padding-right: 2%;
       justify-content: flex-end;
+    }
+    .nav-link-active {
+      color: #fa6000;
     }
 }

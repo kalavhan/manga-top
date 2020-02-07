@@ -1,4 +1,7 @@
-<%= form_for @user, url: signup_path do |f| %>
-  <%= f.text_field :Name %>
-  <%= f.submit "Create account"%>
-<% end %>
+<div class='signup-form'>
+  <h1>Sign up</h1>
+  <%= form_for @user, url: signup_path do |f| %>
+    <%= f.text_field :Name %>
+    <%= f.submit "Create account"%>
+  <% end %>
+</div>

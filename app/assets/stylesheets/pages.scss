@@ -1,32 +1,27 @@
-  body {
-    height: 100vh;
-    min-height: 639px;
-  }
-  
-  .homepage-layout {
-    display: grid;
-    height: 90%;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-row-gap: 1px;
-  }
+.homepage-layout {
+  display: grid;
+  height: 90%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-row-gap: 1px;
+}
 
-  .homepage-featured {
-    grid-column: 1 / span 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    background-color: blue;
-  }
+.homepage-featured {
+  grid-column: 1 / span 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  background-color: blue;
+}
 
-  .homepage-mid  {
-    grid-column: 4 / span 1;
-    grid-row: 1 / span 2;
-    background-color: green;
-  }
+.homepage-mid  {
+  grid-column: 4 / span 1;
+  grid-row: 1 / span 2;
+  background-color: green;
+}
 
-  .homepage-small {
-    grid-column-start: 1;
-    grid-row-start: 3;
-    grid-column: span 1;
-    background-color: orange;
-  }
+.homepage-small {
+  grid-column-start: 1;
+  grid-row-start: 3;
+  grid-column: span 1;
+  background-color: orange;
+}
