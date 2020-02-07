@@ -1,0 +1,43 @@
+a {
+  text-decoration: none;
+}
+
+a:visited{
+  color: inherit;
+}
+
+.nav {
+  height:10%;
+  background-color: #fff;
+  color: #847f7b;
+  display: flex;
+  align-items: center;
+    .nav-div-logo {
+      flex: 1;
+        img {
+          height: auto;
+          width: 80%;
+        }
+    }
+    .nav-div-links {
+      flex: 2;
+      display: flex;
+      align-self: center;
+      justify-content: center;
+        ul {
+          display: flex;
+            li {
+              margin-right: 20px;
+                .nav-link-active {
+                  color: #fa6000;
+                }
+            }
+        }
+    }
+    .nav-div-user {
+      flex: 1;
+      display: flex;
+      padding-right: 2%;
+      justify-content: flex-end;
+    }
+}

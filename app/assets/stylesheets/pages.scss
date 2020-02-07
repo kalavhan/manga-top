@@ -1,11 +1,11 @@
   body {
     height: 100vh;
-    min-height: 100vh;
+    min-height: 639px;
   }
   
   .homepage-layout {
     display: grid;
-    height: 100%;
+    height: 90%;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-row-gap: 1px;

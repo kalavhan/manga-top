@@ -1,13 +1,14 @@
-<nav class="nav">
-  <div class="nav-div-logo">
+<nav class='nav'>
+  <div class='nav-div-logo'>
+    <img src='assets/logo.png'>
   </div>
-  <div class="nav-div-links">
+  <div class='nav-div-links'>
     <ul>
-      <li>Home</li>
+      <li><%= link_to "Home", root_path, class: "#{@home_link}" %></li>
       <li>Write Article</li>
     <ul>
   </div>
-  <div class="nav-div-user">
+  <div class='nav-div-user'>
   <a>Sign in</a>
   |
   <a>Sign up</a>
