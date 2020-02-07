@@ -1,3 +1,32 @@
-// Place all the styles related to the Pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+  body {
+    height: 100vh;
+    min-height: 100vh;
+  }
+  
+  .homepage-layout {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 1px;
+  }
+
+  .homepage-featured {
+    grid-column: 1 / span 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background-color: blue;
+  }
+
+  .homepage-mid  {
+    grid-column: 4 / span 1;
+    grid-row: 1 / span 2;
+    background-color: green;
+  }
+
+  .homepage-small {
+    grid-column-start: 1;
+    grid-row-start: 3;
+    grid-column: span 1;
+    background-color: orange;
+  }
