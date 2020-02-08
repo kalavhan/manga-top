@@ -9,10 +9,9 @@ body {
 
 a {
   text-decoration: none;
-}
-
-a:visited{
-  color: inherit;
+  &:visited{
+    color: inherit;
+  }
 }
 
 .nav {
