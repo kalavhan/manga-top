@@ -1,3 +1,4 @@
+@import "utilities/colors";
 .homepage-layout {
   display: grid;
   height: 90%;
@@ -10,18 +11,36 @@
   grid-column: 1 / span 3;
   grid-row-start: 1;
   grid-row-end: 3;
-  background-color: blue;
+    h2 {
+      color: $orange;
+    }
+    h4 {
+      color: #fff;
+    }
 }
 
 .homepage-mid  {
   grid-column: 4 / span 1;
   grid-row: 1 / span 2;
-  background-color: green;
+    h3 {
+      color: #fff;
+    }
+    h5 {
+      color: #fff;
+    }
 }
 
 .homepage-small {
   grid-column-start: 1;
   grid-row-start: 3;
   grid-column: span 1;
-  background-color: orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+    h4 {
+      color: #fff;
+    }
+    h6 {
+      color: #fff;
+    }
 }

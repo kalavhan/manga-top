@@ -7,7 +7,9 @@
   <div class='nav-div-links'>
     <ul>
       <li><%= link_to "Home", root_path, class: "#{ @home_link }" %></li>
-      <li>Write Article</li>
+      <% if logged_in? %>
+        <li>Write Article</li>
+      <% end %>
     <ul>
   </div>
   <div class='nav-div-user'>

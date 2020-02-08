@@ -1,3 +1,4 @@
+@import "utilities/colors";
 .signup-container {
   height: 80%;
   width: 60%;
@@ -22,7 +23,7 @@
       padding: 22px 40px 40px 40px;
       background-color: #fff;
       h1 {
-        color: #fc9d01;
+        color: $strong-orange;
         font-size: 40px;
         margin-bottom: 20px;
       }
@@ -41,7 +42,7 @@
             align-self: center;
             width: 45%;
             padding: 8px;
-            background-color: #fa6000;
+            background-color: $light-orange;
             color: #fff;
               &:hover {
                 cursor: pointer;

@@ -1,5 +1,6 @@
+@import "utilities/colors";
 html {
-  background-color: #4e443e;
+  background-color: $dark-brown;
 }
 
 body {
@@ -17,7 +18,7 @@ a {
 .nav {
   height:10%;
   background-color: #fff;
-  color: #847f7b;
+  color: $light-gray;
   display: flex;
   align-items: center;
     .nav-div-logo {
@@ -46,6 +47,6 @@ a {
       justify-content: flex-end;
     }
     .nav-link-active {
-      color: #fa6000;
+      color: $strong-orange;
     }
 }
