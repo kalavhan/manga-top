@@ -6,13 +6,17 @@
   </div>
   <div class='nav-div-links'>
     <ul>
-      <li><%= link_to "Home", root_path, class: "#{@home_link}" %></li>
+      <li><%= link_to "Home", root_path, class: "#{ @home_link }" %></li>
       <li>Write Article</li>
     <ul>
   </div>
   <div class='nav-div-user'>
-  <a>Sign in</a>
-  &nbsp;|&nbsp;
-  <%= link_to "Sign up", signup_path, class: "#{@signup_link}" %>
+  <% if logged_in? %>
+    <%= link_to "Sign out", signout_path, method: :delete %>
+  <% else %>
+    <%= link_to "Sign in", signin_path, class: "#{ @signin_link }" %>
+    &nbsp;|&nbsp;
+    <%= link_to "Sign up", signup_path, class: "#{ @signup_link }" %>
+  <% end %>
   </div>
 </nav>

@@ -1,10 +1,13 @@
 class SessionsController < ApplicationController
   def new
+    @signin_link = 'nav-link-active'
+    redirect_to root_path if logged_in?
   end
 
   def create
-    @session = User.find_by(Name: params[:session][:Name])
-    if @session
+    @user = User.find_by(Name: params[:session][:Name])
+    if @user
+      log_in(@user)
       redirect_to root_path
     else
       render 'new'
@@ -12,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out if current_user
-    redirect_to signup_path
+    log_out if logged_in?
+    redirect_to signin_path
   end
 end
