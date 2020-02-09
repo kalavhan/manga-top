@@ -1,4 +1,5 @@
 @import "utilities/colors";
+@import "utilities/fonts";
 html {
   background-color: $dark-brown;
 }
@@ -21,6 +22,7 @@ a {
   color: $light-gray;
   display: flex;
   align-items: center;
+  font-family: $chivo;
     .nav-div-logo {
       flex: 1;
         img {

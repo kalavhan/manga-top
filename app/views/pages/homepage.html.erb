@@ -1,28 +1,41 @@
 <div class="homepage-layout">
-  <div class="homepage-featured" style="background-image: url(/assets/signin.png)">
-    <h2>Title of main</h2>
-    <h4>Subtitle of main</h4>
+  <%= link_to signin_path, class: "homepage-featured" do %>
+    <div style="background-image: url(/assets/signin.png)">
+      <h2>Title of main</h2>
+      <h4>Subtitle of main</h4>
   </div>
+  <% end %>
 
   <div class="homepage-mid" style="background-image: url(/assets/signup-side.png)">
     <h3>Title of main</h3>
     <h5>Subtitle of main</h5>
   </div>
 
-  <div class="homepage-small" style="background-image: url(/assets/signup-side.png)">
-    <h4>Title of main</h4>
-    <h6>Subtitle of main</h6>
-  </div>
-  <div class="homepage-small" style="background-image: url(/assets/signin.png)">
-    <h4>Title of main</h4>
-    <h6>Subtitle of main</h6>
-  </div>
-  <div class="homepage-small" style="background-image: url(/assets/signup-side.png)">
-    <h4>Title of main</h4>
-    <h6>Subtitle of main</h6>
-  </div>
-  <div class="homepage-small" style="background-image: url(/assets/signin.png)">
-    <h4>Title of main</h4>
-    <h6>Subtitle of main</h6>
-  </div>
+  <%= link_to signin_path, class:"homepage-small scan-hover" do %>
+    <div style="background-image: url(/assets/naruto.jpg)">
+      <h4>Shounen</h4>
+      <h6>Naruto: Shippuden</h6>
+    </div>
+  <% end %>
+
+  <%= link_to signin_path, class:"homepage-small scan-hover" do %>
+    <div style="background-image: url(/assets/freak.jpg)">
+      <h4>Horror</h4>
+      <h6>Freak Island</h6>
+    </div>
+  <% end %>
+
+  <%= link_to signin_path, class:"homepage-small scan-hover" do %>
+    <div style="background-image: url(/assets/duoluo.jpg)">
+      <h4>Isekai</h4>
+      <h6>Doulou Dalu</h6>
+    </div>
+  <% end %>
+
+  <%= link_to signin_path, class:"homepage-small" do %>
+    <div style="background-image: url(/assets/gul.jpg)">
+      <h4>Action</h4>
+      <h6>Gul</h6>
+    </div>
+  <% end %>
 </div>

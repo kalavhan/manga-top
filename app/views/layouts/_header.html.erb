@@ -6,9 +6,9 @@
   </div>
   <div class='nav-div-links'>
     <ul>
-      <li><%= link_to "Home", root_path, class: "#{ @home_link }" %></li>
+      <li><%= link_to "HOME", root_path, class: "#{ @home_link }" %></li>
       <% if logged_in? %>
-        <li>Write Article</li>
+        <li>WRITE ARTICLE</li>
       <% end %>
     <ul>
   </div>
@@ -16,9 +16,9 @@
   <% if logged_in? %>
     <%= link_to "Sign out", signout_path, method: :delete %>
   <% else %>
-    <%= link_to "Sign in", signin_path, class: "#{ @signin_link }" %>
+    <%= link_to "LOGIN", signin_path, class: "#{ @signin_link }" %>
     &nbsp;|&nbsp;
-    <%= link_to "Sign up", signup_path, class: "#{ @signup_link }" %>
+    <%= link_to "REGISTER", signup_path, class: "#{ @signup_link }" %>
   <% end %>
   </div>
 </nav>

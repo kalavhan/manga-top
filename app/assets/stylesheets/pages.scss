@@ -1,27 +1,42 @@
 @import "utilities/colors";
+@import "utilities/fonts";
 .homepage-layout {
   display: grid;
-  height: 90%;
+  height: 89.5%;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-row-gap: 1px;
 }
+@keyframes scanimage {
+  from {
+    background-position: 0% -0%;
+  }
 
+  to {
+    background-position: 100% 100%;
+  }
+}
 .homepage-featured {
   grid-column: 1 / span 3;
   grid-row-start: 1;
   grid-row-end: 3;
-    h2 {
-      color: $orange;
-    }
-    h4 {
-      color: #fff;
+    div {
+      height: 100%;
+      width: 100%;
+        h2 {
+          color: $orange;
+        }
+        h4 {
+          color: #fff;
+        }
     }
 }
 
 .homepage-mid  {
   grid-column: 4 / span 1;
   grid-row: 1 / span 2;
+  background-repeat: no-repeat;
+  background-size: cover;
     h3 {
       color: #fff;
     }
@@ -34,13 +49,37 @@
   grid-column-start: 1;
   grid-row-start: 3;
   grid-column: span 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-    h4 {
-      color: #fff;
-    }
-    h6 {
-      color: #fff;
+    div {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transition: 2000ms;
+        &:hover {
+          animation-duration: 4s;
+          animation-name: scanimage;
+          animation-iteration-count: infinite;
+          animation-direction: alternate
+        }
+
+        h4 {
+          color: #fff;
+          font-family: $ghotic;
+          font-size: 20px;
+          font-weight: bolder;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: black;
+        }
+        h6 {
+          color: #fff;
+          font-family: $ghotic;
+          font-weight: bolder;
+          font-size: 21px;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: black;
+        }
     }
 }
