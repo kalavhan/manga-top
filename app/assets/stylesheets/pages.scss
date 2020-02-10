@@ -9,7 +9,7 @@
 }
 @keyframes scanimage {
   from {
-    background-position: 0% -0%;
+    background-position: 0 0;
   }
 
   to {
@@ -23,11 +23,37 @@
     div {
       height: 100%;
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color:rgba(0, 0, 0, 0.2);
+      background-blend-mode: darken;
+      background-size: 100% auto;
+      justify-content: flex-end;
+      animation-duration: 4s;
+      animation-name: scanimage;
+      animation-iteration-count: 2;
+      animation-direction: alternate;
+      &:hover {
+        animation-duration: 4s;
+        animation-name: scanimage;
+        animation-iteration-count: infinite;
+        animation-direction: alternate
+      }
         h2 {
           color: $orange;
+          font-family: $gothic;
+          font-size: 25px;
+          font-weight: 700;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: black;
         }
         h4 {
           color: #fff;
+          font-family: $gothic;
+          font-size: 23px;
+          font-weight: 700;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: black;
         }
     }
 }
@@ -37,11 +63,38 @@
   grid-row: 1 / span 2;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color:rgba(0, 0, 0, 0.2);
+  background-blend-mode: darken;
+    &:hover {
+      animation-duration: 4s;
+      animation-name: scanimage;
+      animation-iteration-count: infinite;
+      animation-direction: alternate
+    }
+
     h3 {
       color: #fff;
+      font-family: $gothic;
+      font-size: 23px;
+      font-weight: 700;
+      text-decoration: underline;
+      text-decoration-color: $yellow;
+      text-decoration-thickness: 2px;
+      padding-top: 5%;
+      padding-left: 5%;
+      margin-bottom: 3px;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: black;
     }
     h5 {
       color: #fff;
+      font-family: $gothic;
+      font-weight: bolder;
+      font-size: 24px;
+      padding-bottom: 5%;
+      padding-left: 5%;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: black;
     }
 }
 
@@ -57,7 +110,8 @@
       justify-content: space-between;
       background-size: cover;
       background-repeat: no-repeat;
-      transition: 2000ms;
+      background-color:rgba(0, 0, 0, 0.2);
+      background-blend-mode: darken;
         &:hover {
           animation-duration: 4s;
           animation-name: scanimage;
@@ -67,17 +121,25 @@
 
         h4 {
           color: #fff;
-          font-family: $ghotic;
+          font-family: $gothic;
           font-size: 20px;
-          font-weight: bolder;
+          font-weight: 700;
+          text-decoration: underline;
+          text-decoration-color: $yellow;
+          text-decoration-thickness: 2px;
+          padding-top: 5%;
+          padding-left: 5%;
+          margin-bottom: 3px;
           -webkit-text-stroke-width: 1px;
           -webkit-text-stroke-color: black;
         }
         h6 {
           color: #fff;
-          font-family: $ghotic;
+          font-family: $gothic;
           font-weight: bolder;
           font-size: 21px;
+          padding-bottom: 5%;
+          padding-left: 5%;
           -webkit-text-stroke-width: 1px;
           -webkit-text-stroke-color: black;
         }
