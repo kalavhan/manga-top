@@ -9,8 +9,6 @@ class ArticlesController < ApplicationController
     params[:article][:AuthorId] = current_user.id
     @article = Article.create(article_params)
     @categories = Category.all
-    p "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-    p @categories
     if @article.save
       redirect_to root_path
     end

@@ -4,11 +4,19 @@
     <%= f.text_field :Title, :autofocus => true %>
     <%= f.label :Content %>
     <%= f.text_area :Text %>
-    <%= f.select(:CategoryId, @categories.collect {|p| [ p.Name, p.id ] }, 
-                                           { :prompt => "Please select"}, 
-                                           { :multiple => true, :size => 5 }) %>
+    <%= f.label :categories%>
+    <%= f.select :categories, Category.all.map { |u| [u.Name, u.id] },
+               { include_blank: true },
+               { class: 'chosen-select', multiple: true}%>
     <%= f.label :Image %>
     <%= f.text_field :Image %>
     <%= f.submit 'Create article' %>
   <% end %>
 </div>
+
+<script>
+$('.chosen-select').chosen(
+  {multiple: true,
+  placeholder_text_multiple: 'Select category(s)'}
+)
+</script>
