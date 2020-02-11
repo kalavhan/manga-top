@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get     '/new-article', to: 'articles#new'
-  post    '/new-article', to: 'articles#create'
+  get     '/new_article', to: 'articles#new'
+  post    '/new_article', to: 'articles#create'
   get     '/signup',      to: 'users#new'
   post    '/signup',      to: 'users#create'
   get     '/signin',      to: 'sessions#new'

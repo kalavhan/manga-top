@@ -1,3 +1,42 @@
-// Place all the styles related to the Articles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+@import "utilities/colors";
+@import "utilities/fonts";
+.new_article_container {
+  height: 350px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px 20px 10px;
+    &::before {
+      z-index: -1;
+      content: "";
+      width: 250px;
+      height: 150px;
+      position: absolute;
+      right: 50%;
+      top: 94px;
+      background-color: $red-orange;
+    }
+    &::after {
+      z-index: -1;
+      content: "";
+      width: 250px;
+      height: 150px;
+      position: absolute;
+      left: 50%;
+      top: 424px;
+      background-color: $red-orange;
+    }
+    form {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+        input[type=text] {
+        
+        }
+    }
+}

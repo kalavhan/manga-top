@@ -1,1 +1,11 @@
-<h2>Here you create articles</h2>
+<div class="new_article_container">
+  <%= form_for @article, url: new_article_path do |f| %>
+    <%= f.label :Title %>
+    <%= f.text_field :Title %>
+    <%= f.label :Text %>
+    <%= f.text_area :Text %>
+    <%= f.label :Image %>
+    <%= f.text_field :Image %>
+    <%= f.submit 'Create article' %>
+  <% end %>
+</div>

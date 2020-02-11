@@ -12,12 +12,12 @@ body {
 a {
   text-decoration: none;
   &:visited{
-    color: inherit;
+    color: $light-gray;
   }
 }
 
 .nav {
-  height:10%;
+  height:64px;
   background-color: #fff;
   color: $light-gray;
   display: flex;
@@ -47,6 +47,13 @@ a {
       display: flex;
       padding-right: 2%;
       justify-content: flex-end;
+      color: $light-gray;
+        a{
+          color: $light-gray;
+            &:visited {
+              color: $light-gray;
+            }
+        }
     }
     .nav-link-active {
       color: $strong-orange;

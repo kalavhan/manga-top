@@ -4,16 +4,18 @@
   display: grid;
   height: 89.5%;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-row-gap: 1px;
 }
 @keyframes scanimage {
-  from {
+  50% {
     background-position: 0 0;
   }
 
-  to {
+  100% {
     background-position: 100% 100%;
+  }
+
+  0% {
+    background-position: 50% 50%;
   }
 }
 .homepage-featured {
@@ -28,6 +30,7 @@
       background-color:rgba(0, 0, 0, 0.2);
       background-blend-mode: darken;
       background-size: 100% auto;
+      background-position: 50% 50%;
       justify-content: flex-end;
       animation-duration: 4s;
       animation-name: scanimage;
@@ -65,6 +68,7 @@
   background-size: cover;
   background-color:rgba(0, 0, 0, 0.2);
   background-blend-mode: darken;
+  background-position: 50% 50%;
     &:hover {
       animation-duration: 4s;
       animation-name: scanimage;
@@ -112,6 +116,7 @@
       background-repeat: no-repeat;
       background-color:rgba(0, 0, 0, 0.2);
       background-blend-mode: darken;
+      background-position: 50% 50%;
         &:hover {
           animation-duration: 4s;
           animation-name: scanimage;
