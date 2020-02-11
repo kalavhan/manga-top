@@ -42,19 +42,15 @@ a {
             }
         }
     }
+    
     .nav-div-user {
       flex: 1;
       display: flex;
       padding-right: 2%;
       justify-content: flex-end;
       color: $light-gray;
-        a{
-          color: $light-gray;
-            &:visited {
-              color: $light-gray;
-            }
-        }
     }
+
     .nav-link-active {
       color: $strong-orange;
     }

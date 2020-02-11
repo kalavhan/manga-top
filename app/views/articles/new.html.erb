@@ -1,9 +1,12 @@
 <div class="new_article_container">
   <%= form_for @article, url: new_article_path do |f| %>
     <%= f.label :Title %>
-    <%= f.text_field :Title %>
-    <%= f.label :Text %>
+    <%= f.text_field :Title, :autofocus => true %>
+    <%= f.label :Content %>
     <%= f.text_area :Text %>
+    <%= f.select(:CategoryId, @categories.collect {|p| [ p.Name, p.id ] }, 
+                                           { :prompt => "Please select"}, 
+                                           { :multiple => true, :size => 5 }) %>
     <%= f.label :Image %>
     <%= f.text_field :Image %>
     <%= f.submit 'Create article' %>

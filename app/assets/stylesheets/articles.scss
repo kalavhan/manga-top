@@ -12,9 +12,14 @@
   padding: 10px 10px 20px 10px;
     &::before {
       z-index: -1;
-      content: "";
-      width: 250px;
-      height: 150px;
+      content: "New article";
+      color: #fff;
+      font-size: 25px;
+      font-family: $chivo;
+      padding-left: 90px;
+      padding-top: 13px;
+      width: 160px;
+      height: 137px;
       position: absolute;
       right: 50%;
       top: 94px;
@@ -36,7 +41,12 @@
       display: flex;
       flex-direction: column;
         input[type=text] {
-        
+          margin-bottom: 20px;
+        }
+        textarea {
+          height: 120px;
+          margin-bottom: 20px;
+          resize: none;
         }
     }
 }
