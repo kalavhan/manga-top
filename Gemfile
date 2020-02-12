@@ -9,6 +9,8 @@ ruby '2.6.3'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'jquery-rails'
 gem 'chosen-rails'
+gem 'carrierwave'
+gem 'cloudinary'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
