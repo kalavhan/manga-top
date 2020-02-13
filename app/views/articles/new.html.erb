@@ -1,15 +1,22 @@
 <div class="new_article_container">
   <%= form_for @article, url: new_article_path do |f| %>
-    <%= f.label :Title %>
-    <%= f.text_field :Title, :autofocus => true %>
-    <%= f.label :Content %>
-    <%= f.text_area :Text %>
+  <div>
+    <% if @article.errors.any?%>
+      <% @article.errors.full_messages.each do |error|%>
+        <p> <%= error %> </p>
+      <% end %>
+    <% end %>
+  </div>
+    <%= f.label :title %>
+    <%= f.text_field :title, :autofocus => true %>
+    <%= f.label :content %>
+    <%= f.text_area :text %>
     <%= f.label :categories%>
-    <%= f.select :categories, Category.all.map { |u| [u.Name, u.id] },
-               { include_blank: true },
-               { class: 'chosen-select', multiple: true}%>
-    <%= f.label :Image %>
-    <%= f.text_field :Image %>
+    <%= f.select(:categories, all_categories.collect { |c| [c.name, c.id] },
+               {},
+               { class: 'chosen-select', multiple: true}) %>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
     <%= f.submit 'Create article' %>
   <% end %>
 </div>

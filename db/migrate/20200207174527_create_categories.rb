@@ -1,10 +1,8 @@
 class CreateCategories < ActiveRecord::Migration[6.0]
   def change
     create_table :categories do |t|
-      t.string :Name
-      t.integer :Priority
-
-      t.timestamps
+      t.string :name
+      t.integer :priority
     end
   end
 end

@@ -6,17 +6,22 @@ class ArticlesController < ApplicationController
   end
   
   def create
-    params[:article][:AuthorId] = current_user.id
-    @article = Article.create(article_params)
-    @categories = Category.all
+    params[:article][:categories].reject!(&:empty?).map!(&:to_i)
+    @article = current_user.created_articles.build(article_params)
     if @article.save
+      params[:article][:categories].each do |categorie|
+          @article.article_categories.build(category_id: categorie.to_i)
+      end
+      @article.save 
       redirect_to root_path
+    else
+      render 'new'
     end
   end
 
   private
 
   def article_params
-    params.require(:article).permit(:Title, :Text, :Image, :AuthorId)
+    params.require(:article).permit(:title, :text, :image, :author_id)
   end
 end

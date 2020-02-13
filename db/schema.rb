@@ -16,40 +16,34 @@ ActiveRecord::Schema.define(version: 2020_02_11_170446) do
   enable_extension "plpgsql"
 
   create_table "article_categories", force: :cascade do |t|
-    t.integer "ArticleId"
-    t.integer "CategoryId"
+    t.integer "article_id"
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "articles", force: :cascade do |t|
-    t.integer "AuthorId"
-    t.string "Title"
-    t.text "Text"
-    t.string "Image"
-    t.date "CreatedAt"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.integer "author_id"
+    t.string "title"
+    t.text "text"
+    t.string "image"
+    t.date "created_at"
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "Name"
-    t.integer "Priority"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.integer "priority"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "Name"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "votes", force: :cascade do |t|
-    t.integer "UserId"
-    t.integer "ArticleId"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.integer "article_id"
   end
 
 end

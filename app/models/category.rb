@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
   has_many :article_categories
-  has_many :articles, through: 'Article_categories'
+  has_many :articles, through: :article_categories, source: :article_id
 end
