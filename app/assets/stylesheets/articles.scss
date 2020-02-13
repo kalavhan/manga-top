@@ -1,11 +1,12 @@
 @import "utilities/colors";
 @import "utilities/fonts";
 .new_article_container {
-  height: 350px;
+  height: 63%;
   width: 300px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 80px;
+  margin-bottom: 4%;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -32,7 +33,7 @@
       height: 150px;
       position: absolute;
       left: 50%;
-      top: 424px;
+      top: 478px;
       background-color: $red-orange;
     }
     form {
@@ -40,13 +41,28 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-        input[type=text] {
-          margin-bottom: 20px;
+      font-family: $chivo;
+        label:nth-of-type(1n + 2) {
+          margin-top: 12px;
+          margin-bottom: 3px;
         }
         textarea {
           height: 120px;
-          margin-bottom: 20px;
           resize: none;
+        }
+        input[type='submit'] {
+          margin-top: 45px;
+          border-radius: 40px;
+          border: none;
+          font-size: 15px;
+          align-self: center;
+          width: 65%;
+          padding: 8px;
+          background-color: $light-orange;
+          color: #fff;
+            &:hover {
+              cursor: pointer;
+            }
         }
     }
 }
@@ -55,4 +71,11 @@
   width: 100%;
   height: 90%;
   display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  div{
+    background-color: green;
+  }
 }

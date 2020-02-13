@@ -55,3 +55,53 @@ a {
       color: $strong-orange;
     }
 }
+
+.footer {
+  height:56px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-family: $chivo;
+    .footer-div-logo {
+      flex: 1;
+        img {
+          height: auto;
+          width: 80%;
+        }
+    }
+    .footer-div-links {
+      flex: 2;
+      display: flex;
+      align-self: center;
+      justify-content: center;
+        ul {
+          display: flex;
+            li {
+              margin-right: 20px;
+              a {
+                color: $orange;
+              }
+            }
+        }
+    }
+    
+    .footer-div-user {
+      flex: 1;
+      display: flex;
+      padding-right: 2%;
+      justify-content: flex-end;
+      color: #fff;
+      align-items: center;
+        a { 
+          img{
+          height: 43px;
+          width: auto;
+          }
+        }
+    }
+
+    .footer-link-active {
+      color: $strong-orange;
+    }
+}

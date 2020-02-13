@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    
+    @all_article_link = "nav-link-active"
   end
   private
 
