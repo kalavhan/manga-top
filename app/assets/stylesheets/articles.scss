@@ -73,9 +73,24 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr 1fr;
-  grid-row-gap: 10px;
-  grid-column-gap: 10px;
-  div{
-    background-color: green;
-  }
+  font-family: $chivo;
+    .two {
+      background-color: #f6f6f6;
+      padding: 20px;
+      width: 100%;
+      height: 100%;
+    }
+    .one {
+      background-size: cover;
+    }
+    h3 {
+      font-size: 20px;
+      color: $orange;
+    }
+    p {
+      max-height: 70%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 }
+

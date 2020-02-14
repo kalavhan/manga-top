@@ -64,41 +64,45 @@
 .homepage-mid  {
   grid-column: 4 / span 1;
   grid-row: 1 / span 2;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color:rgba(0, 0, 0, 0.2);
-  background-blend-mode: darken;
-  background-position: 50% 50%;
-    &:hover {
-      animation-duration: 4s;
-      animation-name: scanimage;
-      animation-iteration-count: infinite;
-      animation-direction: alternate
-    }
-
-    h3 {
-      color: #fff;
-      font-family: $gothic;
-      font-size: 23px;
-      font-weight: 700;
-      text-decoration: underline;
-      text-decoration-color: $yellow;
-      text-decoration-thickness: 2px;
-      padding-top: 5%;
-      padding-left: 5%;
-      margin-bottom: 3px;
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: black;
-    }
-    h5 {
-      color: #fff;
-      font-family: $gothic;
-      font-weight: bolder;
-      font-size: 24px;
-      padding-bottom: 5%;
-      padding-left: 5%;
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: black;
+    div {
+      height: 100%;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color:rgba(0, 0, 0, 0.2);
+      background-blend-mode: darken;
+      background-position: 50% 50%;
+      &:hover {
+        animation-duration: 4s;
+        animation-name: scanimage;
+        animation-iteration-count: infinite;
+        animation-direction: alternate
+      }
+  
+      h4 {
+        color: #fff;
+        font-family: $gothic;
+        font-size: 23px;
+        font-weight: 700;
+        text-decoration: underline;
+        text-decoration-color: $yellow;
+        text-decoration-thickness: 2px;
+        padding-top: 5%;
+        padding-left: 5%;
+        margin-bottom: 3px;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+      }
+      h6 {
+        color: #fff;
+        font-family: $gothic;
+        font-weight: bolder;
+        font-size: 24px;
+        padding-bottom: 5%;
+        padding-left: 5%;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+      }
     }
 }
 

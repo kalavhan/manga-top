@@ -9,10 +9,10 @@ class ArticlesController < ApplicationController
     params[:article][:categories].reject!(&:empty?).map!(&:to_i)
     @article = current_user.created_articles.build(article_params)
     if @article.save
-      params[:article][:categories].each do |categorie|
-          @article.article_categories.build(category_id: categorie.to_i)
+      params[:article][:categories].each do |catego|
+          @article_category = ArticleCategory.new(article: @article, category: Category.find(catego))
+          @article_category.save
       end
-      @article.save 
       redirect_to root_path
     else
       render 'new'
@@ -21,6 +21,7 @@ class ArticlesController < ApplicationController
 
   def index
     @all_article_link = "nav-link-active"
+    @category_articles = articles_categories_all(params[:id])
   end
   private
 
