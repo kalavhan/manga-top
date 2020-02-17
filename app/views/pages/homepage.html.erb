@@ -1,9 +1,11 @@
 <div class="homepage-layout">
-  <%= link_to signin_path, class: "homepage-featured" do %>
-    <div style="background-image: url(<%= @main_article.image %>)">
-      <h2><%= @main_article.title %></h2>
-      <h4><%= @main_article.text %></h4>
-  </div>
+<% if @main_article != nil %>
+    <%= link_to signin_path, class: "homepage-featured" do %>
+      <div style="background-image: url(<%= @main_article.image %>)">
+        <h2><%= @main_article.title %></h2>
+        <h4><%= @main_article.text %></h4>
+      </div>
+    <% end %>
   <% end %>
   <% @article_categories.each_with_index do |art, index| %>
     <% class_article = 'homepage-mid' %>
