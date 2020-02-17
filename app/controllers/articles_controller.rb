@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
 
   def index
     @all_article_link = "nav-link-active"
-    @category_articles = articles_categories_all(params[:id])
+    get_articles_per_categorie(params[:id])
   end
   private
 

@@ -1,8 +1,8 @@
 <div class="homepage-layout">
   <%= link_to signin_path, class: "homepage-featured" do %>
-    <div style="background-image: url(/assets/natsu.jpg)">
-      <h2>One punch man</h2>
-      <h4>The strongest bald hero who hates being the strongest</h4>
+    <div style="background-image: url(<%= @main_article.image %>)">
+      <h2><%= @main_article.title %></h2>
+      <h4><%= @main_article.text %></h4>
   </div>
   <% end %>
   <% @article_categories.each_with_index do |art, index| %>

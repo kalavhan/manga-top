@@ -1,21 +1,33 @@
 <% @articlous %>
 <div class="index-container">
-  <% @article_categories.each_with_index do |article, index| %>
+  <% @articles_per_categorie.each_with_index do |art, index| %>
     <% if index == 0 || index == 1%>
-      <div class="one" style="background-image: url(<%= article.image %>)">
+      <div class="one" style="background-image: url(<%= art.article.image %>)">
       </div>
       <div class="two">
-        <h3><%= article.title%></h3>
-        <p><%= article.text%></p>
-        <%= link_to 'Vote for me', articles_path(article)%>
+        <h3><%= art.article.title%></h3>
+        <p><%= art.article.text%></p>
+        <div> 
+          <%= pluralize(art.article.votes.length, 'Like') %>
+          <% art.article.votes.empty? ? like_class = 'give_dislike' : like_class = 'give_like' %>
+            <%= link_to vote_path(:id => art.article.id, :category_id => art.category.id), class: "#{like_class}", method: :post   do %>
+              <%= material_icon.thumb_up %>
+            <% end %>
+        </div>
       </div>
     <% else %>
       <div class="two">
-        <h3><%= article.title%></h3>
-        <p><%= article.text%></p>
-        <%= link_to 'Vote for me', articles_path(article)%>
+        <h3><%= art.article.title%></h3>
+        <p><%= art.article.text%></p>
+        <div> 
+          <%= pluralize(art.article.votes.length, 'Like') %>
+          <% art.article.votes.empty? ? like_class = 'give_dislike' : like_class = 'give_like' %>
+            <%= link_to vote_path(:id => art.article.id, :category_id => art.category.id), class: "#{like_class}", method: :post   do %>
+              <%= material_icon.thumb_up %>
+            <% end %>
+        </div>
       </div>
-      <div class="one" style="background-image: url(<%= article.image %>)">
+      <div class="one" style="background-image: url(<%= art.article.image %>)">
       </div>
     <% end %>
   <% end %>

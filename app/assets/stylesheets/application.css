@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  *= require chosen
+ *= require material_icons
+ *= require material_icons_unicode
  */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126

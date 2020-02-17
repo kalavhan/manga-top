@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'chosen-rails'
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'material_icons'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server

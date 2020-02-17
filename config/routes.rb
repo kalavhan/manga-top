@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get 'votes/vote'
+  post    '/vote',        to: 'votes#vote'
   get     '/articles',    to: 'articles#index'
-  post     '/articles',    to: 'articles#index'
+  post    '/articles',    to: 'articles#index'
   get     '/new_article', to: 'articles#new'
   post    '/new_article', to: 'articles#create'
   get     '/signup',      to: 'users#new'

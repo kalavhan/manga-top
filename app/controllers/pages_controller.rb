@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def homepage
     @home_link = "nav-link-active"
-    get_home_articles
+    @article_categories = ArticleCategory.five_most_recent_articles
+    @main_article = Article.most_voted
   end
 end

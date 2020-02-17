@@ -3,4 +3,5 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include PagesHelper
   include ArticlesHelper
+  include VotesHelper
 end
