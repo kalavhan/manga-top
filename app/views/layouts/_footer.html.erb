@@ -1,7 +1,7 @@
 <footer class="footer">
 <div class='footer-div-logo'>
     <%= link_to root_path do %>
-      <img src='assets/logo.png'>
+      <img src='<%= image_path('logo.png') %>'>
     <% end %>
   </div>
   <div class='footer-div-links'>
@@ -14,13 +14,13 @@
   <div class='footer-div-user'>
     <span>Connect with us:</span>
     <%= link_to root_path do %>
-      <img src="assets/twitter.svg">
+      <img src='<%= image_path('twitter.svg') %>'>
     <% end %>
     <%= link_to root_path do %>
-      <img src="assets/instagram.svg">
+      <img src='<%= image_path('instagram.svg') %>'>
     <% end %>
     <%= link_to root_path do %>
-      <img src="assets/facebook.svg">
+      <img src='<%= image_path('facebook.svg') %>'>
     <% end %>
   </div>
 </div>
