@@ -15,6 +15,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def kill
+    User.destroy_all
+    Article.destroy_all
+    ArticleCategory.destroy_all
+    redirect_to signup_path
+  end
+
   private
 
   def user_params
