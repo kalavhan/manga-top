@@ -8,6 +8,8 @@ production:
   cloud_name: kalavhan
   api_key: '567197668174973'
   api_secret: dxRCmJQ18xkzkK4m1J7HrYfQHgY
+  enhance_image_tag: true
+  static_file_support: true
 test:
   cloud_name: kalavhan
   api_key: '567197668174973'
