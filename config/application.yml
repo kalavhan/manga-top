@@ -1,3 +1,3 @@
-cloudinary_cloud: 'kalavhan'
-cloudinary_key: '567197668174973'
-cloudinary_secret: 'dxRCmJQ18xkzkK4m1J7HrYfQHgY'
+CLOUDINARY_NAME: 'kalavhan'
+CLOUDINARY_API_KEY: '567197668174973'
+CLOUDINARY_API_SECRET: 'dxRCmJQ18xkzkK4m1J7HrYfQHgY'
