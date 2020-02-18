@@ -13,6 +13,8 @@
     ·
     <a href="https://github.com/kalavhan/manga-top/issues">Report Bug</a>
     ·
+    <a href="https://blooming-crag-23204.herokuapp.com/">Live version</a>
+    ·
     <a href="https://github.com/kalavhan/manga-top/issues">Request Feature</a>
   </p>
 </p>
