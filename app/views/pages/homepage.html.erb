@@ -1,7 +1,7 @@
 <div class="homepage-layout">
 <% if @main_article != nil %>
     <%= link_to signin_path, class: "homepage-featured" do %>
-      <div style="background-image: url(<%= @main_article.image %>)">
+      <div style="background-image: url(<%= @main_article.image.url %>)">
         <h2><%= @main_article.title %></h2>
         <h4><%= @main_article.text %></h4>
       </div>
@@ -11,7 +11,7 @@
     <% class_article = 'homepage-mid' %>
     <% class_article = 'homepage-small' if index > 0 %>
       <%= link_to articles_path(:id => art.category.id), class:"#{class_article} scan-hover", method: :post do %>
-        <div style="background-image: url(<%= art.article.image %>)">
+        <div style="background-image: url(<%= art.article.image.url %>)">
           <h4><%= art.category.name %></h4>
           <h6><%= art.article.title %></h6>
         </div>
