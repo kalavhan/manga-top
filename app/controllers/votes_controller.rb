@@ -1,5 +1,6 @@
 class VotesController < ApplicationController
   def vote
+    redirect_to signin_path unless logged_in?
     article_id = params[:id]
     user_id = current_user.id
     article_voted = Vote.where("user_id = ? AND article_id = ?", user_id, article_id)
