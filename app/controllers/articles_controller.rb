@@ -6,11 +6,14 @@ class ArticlesController < ApplicationController
   end
   
   def create
-    params[:article][:categories].reject!(&:empty?).map!(&:to_i)
     @article = current_user.created_articles.build(article_params)
-    if @article.save
+    if params[:article][:categories].nil?
+      @article.errors.add(:Categories, " can't be empty")
+      render 'new'
+      return
+    elsif @article.save
       params[:article][:categories].each do |catego|
-          @article_category = ArticleCategory.new(article: @article, category: Category.find(catego))
+          @article_category = ArticleCategory.new(article: @article, category: Category.find(catego.to_i))
           @article_category.save
       end
       redirect_to root_path

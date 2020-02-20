@@ -13,7 +13,8 @@
     <%= f.text_area :text %>
     <%= f.label :categories%>
     <%= f.select(:categories, all_categories.collect { |c| [c.name, c.id] },
-               {},
+               {:include_blank => false,
+               :include_hidden => false},
                { class: 'chosen-select', multiple: true}) %>
     <%= f.label :image %>
     <%= f.file_field :image %>

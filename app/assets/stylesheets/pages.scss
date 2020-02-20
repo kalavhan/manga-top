@@ -4,6 +4,7 @@
   display: grid;
   height: 90%;
   grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 33.3%;
 }
 @keyframes scanimage {
   50% {
@@ -108,7 +109,6 @@
 
 .homepage-small {
   grid-column-start: 1;
-  grid-row-start: 3;
   grid-column: span 1;
     div {
       height: 100%;

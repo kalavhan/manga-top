@@ -5,11 +5,16 @@ class ArticleCategory < ApplicationRecord
   def self.five_most_recent_articles
     ArticleCategory.where('"article_categories"."id" IN 
                           (SELECT "f"."id" FROM "article_categories" "f" 
-                          INNER JOIN (SELECT MAX("c"."id") as "id" 
-                          FROM "article_categories" as "c"
-                          GROUP BY "c"."category_id") "s"
+                            INNER JOIN (SELECT MAX("c"."id") as "id" 
+                            FROM "article_categories" as "c"
+                            INNER JOIN
+                            (SELECT MIN("x"."id") as "id", "x"."article_id" 
+                              FROM "article_categories" as "x"
+                              GROUP BY "x"."article_id") "d" ON "c"."id" = "d"."id"  
+                            GROUP BY "c"."category_id"
+                            ) "s"
                           ON "f"."id" = "s"."id"
-                          ORDER BY "f"."created_at" DESC LIMIT(5))').
+                          ORDER BY "f"."created_at" DESC)').
                     order('"article_categories"."category_id" ASC').
                     eager_load(:article, :category)
   end
