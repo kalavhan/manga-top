@@ -21,6 +21,8 @@ a {
   background-color: #fff;
   color: $light-gray;
   display: flex;
+  position: sticky;
+  top: 0;
   align-items: center;
   font-family: $chivo;
     .nav-div-logo {
@@ -40,7 +42,33 @@ a {
             li {
               margin-right: 20px;
             }
+            .categories_dropdown {
+              .categories_dropdown_content {
+                display: none;
+                position: absolute;
+                background-color: #fff;
+                font-size: 18px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                  a{
+                    color: black;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    border-bottom: 1px;
+                    border-color: black;
+                    border-style: solid;
+                    &:hover{
+                      color: $orange;
+                    }
+                  }
+              }
+            }
+            .categories_dropdown:hover .categories_dropdown_content {
+              display: flex;
+              flex-direction: column;
+            }
         }
+
     }
     
     .nav-div-user {

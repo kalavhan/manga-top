@@ -7,6 +7,15 @@
   <div class='nav-div-links'>
     <ul>
       <li><%= link_to "HOME", root_path, class: "#{ @home_link }" %></li>
+      <li>
+        <div class="categories_dropdown">
+          <a>CATEGORIES</a>
+          <div class="categories_dropdown_content">
+          <% @categorie_list.each do |x|%>
+            <%= link_to x.category.name, articles_path(:id => x.category.id), method: :post%>
+          <% end %>
+          </div>
+        </div></li>
       <% if logged_in? %>
         <li><%= link_to "NEW ARTICLE", new_article_path, class: "#{ @new_article_link }" %></li>
       <% end %>

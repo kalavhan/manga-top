@@ -14,7 +14,7 @@ class ArticleCategory < ApplicationRecord
                             GROUP BY "c"."category_id"
                             ) "s"
                           ON "f"."id" = "s"."id"
-                          ORDER BY "f"."created_at" DESC)').
+                          ORDER BY "f"."created_at" DESC LIMIT(5))').
                     order('"article_categories"."category_id" ASC').
                     eager_load(:article, :category)
   end
@@ -26,4 +26,7 @@ class ArticleCategory < ApplicationRecord
                     eager_load({:article => :votes}, :category)
   end
   
+  def self.cat_with_art
+    ArticleCategory.includes(:category).select('DISTINCT "article_categories"."category_id"')
+  end
 end

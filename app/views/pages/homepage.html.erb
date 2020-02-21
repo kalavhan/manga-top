@@ -3,7 +3,7 @@
     <%= link_to signin_path, class: "homepage-featured" do %>
       <div style="background-image: url('<%= @main_article.image.url %>')">
         <h2><%= @main_article.title %></h2>
-        <h4><%= @main_article.text %></h4>
+        <h4><%= @main_article.text.truncate(120, separator: ' ') %></h4>
       </div>
     <% end %>
   <% end %>
