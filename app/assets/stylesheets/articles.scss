@@ -77,21 +77,37 @@
     .two {
       background-color: #f6f6f6;
       padding: 2%;
-      width: 100%;
+      width: 96%;
       height: 96%;
     }
     .one {
       background-size: cover;
       height: 100%;
+      width: 100%;
     }
     h3 {
       font-size: 20px;
       color: $orange;
     }
+    h1 {
+      font-size: 14px;
+      margin-top: 2px;
+      margin-bottom: 2px;
+      color: $light-black;
+    }
     p {
       max-height: 70%;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      margin-top: 6px;
+    }
+    .like-container{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+        i {
+          padding-left: 4px;
+        } 
     }
     .give_like > i{
       color: blue;

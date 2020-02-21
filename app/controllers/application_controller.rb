@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   include PagesHelper
   include ArticlesHelper
   include VotesHelper
-
+  
   private 
 
   def get_categories_with_articles

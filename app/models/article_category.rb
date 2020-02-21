@@ -23,10 +23,10 @@ class ArticleCategory < ApplicationRecord
     ArticleCategory.where("article_categories.category_id = ?", id).
                     order(created_at: :desc).
                     limit(4).
-                    eager_load({:article => :votes}, :category)
+                    eager_load({:article => [:author, {:votes => :user}]}, :category)
   end
   
   def self.cat_with_art
-    ArticleCategory.includes(:category).select('DISTINCT "article_categories"."category_id"')
+    ArticleCategory.includes(:category).select('DISTINCT "article_categories"."category_id"').order(category_id: :asc)
   end
 end
