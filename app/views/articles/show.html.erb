@@ -8,10 +8,14 @@
   <h4 class="article_info"><%= @art.article.created_at%></h4>
   <hr>
   <div class="create-comment-container">
-    <%= form_for :comments, :url => comment_path(:article_id => @article_id) do |f| %>
-      <%= f.label :Comment_something!%>
-      <%= f.text_area :text %>
-      <%= f.submit 'Leave comment'%>
+    <% if logged_in? %>
+      <%= form_for :comments, :url => comment_path(:article_id => @article_id) do |f| %>
+        <%= f.label :Comment_something!%>
+        <%= f.text_area :text %>
+        <%= f.submit 'Leave comment'%>
+      <% end %>
+    <% else %>
+      <%= link_to 'Login to comment', signin_path, class: 'orange-link' %>
     <% end %>
     <div class="comments-article">
     <% if @art.article.comments.size>0 %>
