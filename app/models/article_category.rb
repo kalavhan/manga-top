@@ -29,4 +29,9 @@ class ArticleCategory < ApplicationRecord
   def self.cat_with_art
     ArticleCategory.includes(:category).select('DISTINCT "article_categories"."category_id"').order(category_id: :asc)
   end
+
+  def self.get_article(article_id)
+    ArticleCategory.where('"article_categories"."id" = ?', article_id).
+    eager_load({:article => [:author, {:votes => :user}]}, :category)
+  end
 end

@@ -26,6 +26,10 @@ class ArticlesController < ApplicationController
     @all_article_link = "nav-link-active"
     get_articles_per_categorie(params[:id])
   end
+
+  def show
+    @show_article = ArticleCategory.get_article(params[:id])
+  end
   private
 
   def article_params

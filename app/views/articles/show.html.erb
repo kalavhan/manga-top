@@ -1,0 +1,18 @@
+<div class="container-show-article">
+<% @show_article.each do |art| %>
+  <% article_id = art.article.id%>
+  <h1><%= art.article.title %></h1>
+  <%= cl_image_tag(art.article.image)%>
+  <p><%= art.article.text %><p>
+  <h4 class="article_info">By <%= art.article.author.name %></h4>
+  <h4 class="article_info"><%= art.article.created_at%></h4>
+<% end %>
+  <hr>
+  <div>
+    <%= form_for :comments, :url => comment_path(:id => article_id) do |f| %>
+      <%= f.label :Comment%>
+      <%= f.text_area :text %>
+      <%= f.submit 'Leave comment'%>
+    <% end %>
+  </div>
+</div>

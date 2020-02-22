@@ -8,30 +8,42 @@
       <div class="like-container"> 
           <%= pluralize(art.article.votes.length, 'Like') %>
           <% if logged_in?%>
-            <% art.article.votes.empty? ? like_class = 'give_dislike' : like_class = 'give_like' %>
-            <%= link_to vote_path(:id => art.article.id, :category_id => art.category.id), class: "#{like_class}", method: :post   do %>
-              <%= material_icon.thumb_up %>
+            <% if art.article.votes.any? { |x| x.user_id == current_user.id} %>
+              <%= link_to unvote_path(:id => art.article.id, :category_id => art.category.id), class: "give_dislike", method: :delete   do %>
+                <%= material_icon.thumb_up %>
+              <% end %>
+            <% else %>
+              <%= link_to vote_path(:id => art.article.id, :category_id => art.category.id), class: "give_like", method: :post   do %>
+                <%= material_icon.thumb_up %>
+              <% end %>
             <% end %>
           <% end %>
       </div>
         <h3><%= art.article.title%></h3>
         <h1>By <%= art.article.author.name %></h1>
         <p><%= art.article.text.truncate(250, separator: ' ') %></p>
+        <%= link_to 'Read more', read_article_path(:id => art.article.id), class: "read-more", method: :post %>
       </div>
     <% else %>
       <div class="two">
         <div class="like-container"> 
           <%= pluralize(art.article.votes.length, 'Like') %>
           <% if logged_in? %>
-            <% art.article.votes.any? { |x| x.user_id == current_user.id}  ? like_class = 'give_like' : like_class = 'give_dislike' %>
-            <%= link_to vote_path(:id => art.article.id, :category_id => art.category.id), class: "#{like_class}", method: :post   do %>
-              <%= material_icon.thumb_up %>
+            <% if art.article.votes.any? { |x| x.user_id == current_user.id} %>
+              <%= link_to unvote_path(:id => art.article.id, :category_id => art.category.id), class: "give_dislike", method: :delete   do %>
+                <%= material_icon.thumb_up %>
+              <% end %>
+            <% else %>
+              <%= link_to vote_path(:id => art.article.id, :category_id => art.category.id), class: "give_like", method: :post   do %>
+                <%= material_icon.thumb_up %>
+              <% end %>
             <% end %>
           <% end %>
         </div>
         <h3><%= art.article.title%></h3>
         <h1>By <%= art.article.author.name %></h1>
         <p><%= art.article.text.truncate(250, separator: ' ') %></p>
+        <%= link_to 'Read more', read_article_path(:id => art.article.id), class: "read-more", method: :post %>
       </div>
       <div class="one" style="background-image: url(<%= art.article.image %>)">
       </div>
