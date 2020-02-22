@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     article_id = params[:comments][:id]
     if @comment.save
-      redirect_to read_article_path(:id => @article_id)
+      redirect_to read_article_path(id: @article_id)
     else
       render "article?id=#{@article_id}"
     end

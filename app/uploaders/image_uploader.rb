@@ -3,9 +3,9 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   CarrierWave.configure do |config|
     config.cache_storage = :file
-   end
-
-   def extension_whitelist
-    %w[jpg jpeg gif png]
   end
+
+  def extension_whitelist
+    %w[jpg jpeg gif png]
+ end
 end

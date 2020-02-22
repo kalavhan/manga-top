@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
   include PagesHelper
   include ArticlesHelper
   include VotesHelper
-  
-  private 
+
+  private
 
   def get_categories_with_articles
     @categorie_list = ArticleCategory.cat_with_art
