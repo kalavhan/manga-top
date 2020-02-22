@@ -9,7 +9,7 @@
       <li><%= link_to "HOME", root_path, class: "#{ @home_link }" %></li>
       <li>
         <div class="categories_dropdown">
-          <a>CATEGORIES</a>
+          <a>CATEGORIES &#8595;</a>
           <div class="categories_dropdown_content">
           <% @categorie_list.each do |x|%>
             <%= link_to x.category.name, articles_path(:id => x.category.id), method: :post%>

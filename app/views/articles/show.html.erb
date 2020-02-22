@@ -1,18 +1,29 @@
 <div class="container-show-article">
-<% @show_article.each do |art| %>
-  <% article_id = art.article.id%>
-  <h1><%= art.article.title %></h1>
-  <%= cl_image_tag(art.article.image)%>
-  <p><%= art.article.text %><p>
-  <h4 class="article_info">By <%= art.article.author.name %></h4>
-  <h4 class="article_info"><%= art.article.created_at%></h4>
-<% end %>
+<% @art = @show_article[0] %>
+  <% @article_id = @art.article.id%>
+  <h1><%= @art.article.title %></h1>
+  <%= cl_image_tag(@art.article.image)%>
+  <p><%= @art.article.text %><p>
+  <h4 class="article_info">By <%= @art.article.author.name %></h4>
+  <h4 class="article_info"><%= @art.article.created_at%></h4>
   <hr>
-  <div>
-    <%= form_for :comments, :url => comment_path(:id => article_id) do |f| %>
-      <%= f.label :Comment%>
+  <div class="create-comment-container">
+    <%= form_for :comments, :url => comment_path(:article_id => @article_id) do |f| %>
+      <%= f.label :Comment_something!%>
       <%= f.text_area :text %>
       <%= f.submit 'Leave comment'%>
     <% end %>
+    <div class="comments-article">
+    <% if @art.article.comments.size>0 %>
+      <% @art.article.comments.reverse.each do |x| %>
+        <div>
+          <h2><%= x.user.name %></h2>
+          <p><%= x.text %></p>
+        </div>
+      <%end%>
+    <% else %>
+      <h2 class="no-comment">No comments so far, be the first!<h2>
+    <% end %>
+    </div>
   </div>
 </div>

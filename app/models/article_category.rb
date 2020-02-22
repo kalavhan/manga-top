@@ -31,7 +31,7 @@ class ArticleCategory < ApplicationRecord
   end
 
   def self.get_article(article_id)
-    ArticleCategory.where('"article_categories"."id" = ?', article_id).
-    eager_load({:article => [:author, {:votes => :user}]}, :category)
+    ArticleCategory.where('"article_categories"."article_id" = ?', article_id).
+    eager_load({:article => [:author, {:votes => :user}, {:comments => :user}]}, :category)
   end
 end
