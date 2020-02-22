@@ -1,5 +1,5 @@
 module VotesHelper
-  def is_voted?(article_id)
-    !Vote.is_voted?(@current_user, article_id).nil?
+  def voted?(article_id)
+    !Vote.voted?(@current_user, article_id).nil?
   end
 end

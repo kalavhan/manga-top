@@ -4,7 +4,6 @@ class CommentsController < ApplicationController
     params[:comments][:user_id] = current_user.id
     params[:comments][:article_id] = @article_id
     @comment = Comment.new(comment_params)
-    article_id = params[:comments][:id]
     if @comment.save
       redirect_to read_article_path(id: @article_id)
     else

@@ -11,6 +11,8 @@ class Article < ApplicationRecord
 
   def self.most_voted
     # Article.eager_load(:votes).group("votes.article_id").count(:votes).first
-    Article.select('articles.*, COUNT(votes.id) as voted').joins('FULL OUTER JOIN votes ON votes.article_id = articles.id').group('articles.id').order(voted: :desc).first
+    Article.select('articles.*, COUNT(votes.id) as voted')
+      .joins('FULL OUTER JOIN votes ON votes.article_id = articles.id').group('articles.id')
+      .order(voted: :desc).first
   end
 end
