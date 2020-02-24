@@ -1,0 +1,55 @@
+@import "utilities/colors";
+@import "utilities/fonts";
+.signup-container {
+  height: 81%;
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+    .signup-side {
+      width: 50%;
+      height: 80%;
+      display: flex;
+      justify-content: flex-end;
+        img {
+          height: 100%;
+          width: auto;
+        }
+    }
+    .signup-form {
+      height: 67.6%;
+      width: 25%;
+      padding: 22px 40px 40px 40px;
+      background-color: #fff;
+      h1 {
+        color: $strong-orange;
+        font-size: 40px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+  
+      form {
+        display: flex;
+        flex-direction: column;
+          input[type='text'] {
+            margin-bottom: 10px;
+          }
+  
+          input[type='submit'] {
+            border-radius: 40px;
+            border: none;
+            font-size: 15px;
+            align-self: center;
+            width: 65%;
+            padding: 8px;
+            background-color: $light-orange;
+            color: #fff;
+              &:hover {
+                cursor: pointer;
+              }
+          }
+      }
+    }
+}

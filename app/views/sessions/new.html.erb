@@ -1,0 +1,12 @@
+<div class="signup-container">
+  <div class="signup-side">
+    <%= image_tag 'signin.png' %>
+  </div>
+  <div class='signup-form'>
+    <h1>Sign in</h1>
+    <%= form_for :session do |f| %>
+      <%= f.text_field :name, autofocus: true %>
+      <%= f.submit "Sign in"%>
+    <% end %>
+  </div>
+</div>

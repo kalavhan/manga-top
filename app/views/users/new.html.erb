@@ -1,0 +1,12 @@
+<div class="signup-container">
+  <div class="signup-side">
+    <%= image_tag 'signup-side.png' %>
+  </div>
+  <div class='signup-form'>
+    <h1>Sign up</h1>
+    <%= form_for @user, url: signup_path do |f| %>
+      <%= f.text_field :name, autofocus: true %>
+      <%= f.submit "Create account"%>
+    <% end %>
+  </div>
+</div>

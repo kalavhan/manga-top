@@ -1,0 +1,156 @@
+@import "utilities/colors";
+@import "utilities/fonts";
+.homepage-layout {
+  display: grid;
+  height: 90%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 33.3%;
+}
+@keyframes scanimage {
+  50% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 100% 100%;
+  }
+
+  0% {
+    background-position: 50% 50%;
+  }
+}
+.homepage-featured {
+  grid-column: 1 / span 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+    div {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color:rgba(0, 0, 0, 0.2);
+      background-blend-mode: darken;
+      background-size: 100% auto;
+      background-position: 50% 50%;
+      justify-content: flex-end;
+      animation-duration: 4s;
+      animation-name: scanimage;
+      animation-iteration-count: 2;
+      animation-direction: alternate;
+      &:hover {
+        animation-duration: 4s;
+        animation-name: scanimage;
+        animation-iteration-count: infinite;
+        animation-direction: alternate
+      }
+        h2 {
+          color: $orange;
+          font-family: $gothic;
+          font-size: 25px;
+          font-weight: 700;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: black;
+        }
+        h4 {
+          color: #fff;
+          font-family: $gothic;
+          font-size: 23px;
+          font-weight: 700;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: black;
+        }
+    }
+}
+
+.homepage-mid  {
+  grid-column: 4 / span 1;
+  grid-row: 1 / span 2;
+    div {
+      height: 100%;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color:rgba(0, 0, 0, 0.2);
+      background-blend-mode: darken;
+      background-position: 50% 50%;
+      &:hover {
+        animation-duration: 4s;
+        animation-name: scanimage;
+        animation-iteration-count: infinite;
+        animation-direction: alternate
+      }
+  
+      h4 {
+        color: #fff;
+        font-family: $gothic;
+        font-size: 23px;
+        font-weight: 700;
+        text-decoration: underline;
+        text-decoration-color: $yellow;
+        text-decoration-thickness: 2px;
+        padding-top: 5%;
+        padding-left: 5%;
+        margin-bottom: 3px;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+      }
+      h6 {
+        color: #fff;
+        font-family: $gothic;
+        font-weight: bolder;
+        font-size: 24px;
+        padding-bottom: 5%;
+        padding-left: 5%;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+      }
+    }
+}
+
+.homepage-small {
+  grid-column-start: 1;
+  grid-column: span 1;
+    div {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-color:rgba(0, 0, 0, 0.2);
+      background-blend-mode: darken;
+      background-position: 50% 50%;
+        &:hover {
+          animation-duration: 4s;
+          animation-name: scanimage;
+          animation-iteration-count: infinite;
+          animation-direction: alternate
+        }
+
+        h4 {
+          color: #fff;
+          font-family: $gothic;
+          font-size: 20px;
+          font-weight: 700;
+          text-decoration: underline;
+          text-decoration-color: $yellow;
+          text-decoration-thickness: 2px;
+          padding-top: 5%;
+          padding-left: 5%;
+          margin-bottom: 3px;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: black;
+        }
+        h6 {
+          color: #fff;
+          font-family: $gothic;
+          font-weight: bolder;
+          font-size: 21px;
+          padding-bottom: 5%;
+          padding-left: 5%;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: black;
+        }
+    }
+}

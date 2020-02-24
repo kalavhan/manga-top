@@ -1,0 +1,53 @@
+<% @articlous %>
+<div class="index-container">
+  <% @articles_per_categorie.each_with_index do |art, index| %>
+    <% if index == 0 || index == 1%>
+      <div class="one" style="background-image: url(<%= art.article.image %>)">
+      </div>
+      <div class="two">
+      <div class="like-container"> 
+          <%= pluralize(art.article.votes.length, 'Like') %>
+          <% if logged_in?%>
+            <% if art.article.votes.any? { |x| x.user_id == current_user.id} %>
+              <%= link_to unvote_path(:id => art.article.id, :category_id => art.category.id), class: "give_dislike", method: :delete   do %>
+                <%= material_icon.thumb_up %>
+              <% end %>
+            <% else %>
+              <%= link_to vote_path(:id => art.article.id, :category_id => art.category.id), class: "give_like", method: :post   do %>
+                <%= material_icon.thumb_up %>
+              <% end %>
+            <% end %>
+          <% end %>
+      </div>
+        <h3><%= art.article.title%></h3>
+        <h1>By <%= art.article.author.name %></h1>
+        <p><%= art.article.text.truncate(250, separator: ' ') %></p>
+        <%= link_to 'Read more', read_article_path(:id => art.article.id), class: "read-more", method: :post %>
+      </div>
+    <% else %>
+      <div class="two">
+        <div class="like-container"> 
+          <%= pluralize(art.article.votes.length, 'Like') %>
+          <% if logged_in? %>
+            <% if art.article.votes.any? { |x| x.user_id == current_user.id} %>
+              <%= link_to unvote_path(:id => art.article.id, :category_id => art.category.id), class: "give_dislike", method: :delete   do %>
+                <%= material_icon.thumb_up %>
+              <% end %>
+            <% else %>
+              <%= link_to vote_path(:id => art.article.id, :category_id => art.category.id), class: "give_like", method: :post   do %>
+                <%= material_icon.thumb_up %>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+        <h3><%= art.article.title%></h3>
+        <h1>By <%= art.article.author.name %></h1>
+        <p><%= art.article.text.truncate(250, separator: ' ') %></p>
+        <%= link_to 'Read more', read_article_path(:id => art.article.id), class: "read-more", method: :post %>
+      </div>
+      <div class="one" style="background-image: url(<%= art.article.image %>)">
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<%= render 'layouts/footer'%>

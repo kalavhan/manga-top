@@ -1,0 +1,27 @@
+<footer class="footer">
+<div class='footer-div-logo'>
+    <%= link_to root_path do %>
+      <%= image_tag 'logo.png' %>
+    <% end %>
+  </div>
+  <div class='footer-div-links'>
+    <ul>
+      <li><%= link_to "Privacy Policy", root_path %></li>
+      <li><%= link_to "Terms & Conditions", root_path %></li>
+      <li>Copyright 2014. All rights reserved.</li>
+    <ul>
+  </div>
+  <div class='footer-div-user'>
+    <span>Connect with us:</span>
+    <%= link_to root_path do %>
+      <%= image_tag 'twitter.svg' %>
+    <% end %>
+    <%= link_to root_path do %>
+      <%= image_tag 'instagram.svg' %>
+    <% end %>
+    <%= link_to root_path do %>
+      <%= image_tag 'facebook.svg' %>
+    <% end %>
+  </div>
+</div>
+</footer>
