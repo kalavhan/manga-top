@@ -5,9 +5,9 @@
  
   <h3 align="center">Manga top</h3>
   <p align="center">
-    Web page to create reiews of mangas 
+    Web applicaton for the review of mangas and comics, built with Ruby on Rails.
     <br />
-    <a href="https://github.com/kalavhan/manga-top/"><strong>Explore the docs »</strong></a>
+    <a href="#table-of-contents"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     ·
@@ -19,13 +19,18 @@
   </p>
 </p>
 
+![screenshot](screenshots/homepage.jpg)
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
 * [About the Project](#about-the-project)
+  * [Features](#features)
   * [Built With](#built-with)
-* [Use](#use)
+* [Screenshots](#screenshots)
+* [Prerequisites](#prerequisites)
+* [Setup](#setup)
+* [Usage](#usage)
 * [Roadmap](#roadmap)
 * [License](#license)
 * [Contact](#contact)
@@ -34,12 +39,20 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+Manga Top is a web application to review Mangas, where anyone can read the reviews and registred users can comment, like or publish their own.
 
-A basic blog application with simple features
-- Login
-- Create article
-- Vote article
-- un-vote article
+## Features
+ - Create an account
+ - Log in to account
+ - Homepage with most recent articles
+ - Articles by category
+ - Comment an article
+ - Like an article
+
+## Built With
+- Ruby on Rails 6
+- SCSS
+- ERB
 
 ## Screenshots
 
@@ -58,39 +71,43 @@ A basic blog application with simple features
 ### Articles per categorie page
 ![screenshot](screenshots/categorie.png)
 
-
-### Built With
-
-This project was built with Ruby on rails version 6
-
 ## Prerequisites
  - Git
  - Ruby
- - Ruby on rails version 6
+ - Ruby on Rails 6
  - Yarn
  - Node.js
- - NPM
  - PostgreSQL
 
+## Setup
 
-## Getting Started
+Use the [git](https://git-scm.com/downloads) to clone the project to your local machine.
+```sh
+$ git clone https://github.com/kalavhan/manga-top.git
+```
 
-- git clone https://github.com/kalavhan/manga-top.git
+Navigate to the extracted folder
+```sh 
+cd manga-top
+```
 
-- cd manga-top
+Install and update dependencies and modules
+```sh
+$ bundle install
+$ bundle update
+```
+Create and populate database
+```sh
+$ rails db:create
+$ rails db:migrate
+$ rails db:seed
+```
 
-- bundle update
-
-- bundle install
-
-- rails db:create
-
-- rails db:migrate (to add tables and columns)
-
-- rails db:seed (to add the categories)
-
-- rails server to fire the rails server
-
+### Usage
+```sh
+$ rails server
+```
+This will open the app at 127.0.0.1:3000. If it doesn't open, visit ```http://localhost:3000```
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -105,9 +122,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 ## Contact
-Josue Brigido - [Github profile](https://github.com/kalavhan)
+👤 **Josue Brigido**
 
-Project Link: [Project repo](https://github.com/kalavhan/manga-top/)
+[Github](https://github.com/kalavhan) | [Twitter](https://twitter.com/kalavhan) | [LinkedIn](https://linkedin.com/in/kalavhan)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
