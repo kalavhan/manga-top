@@ -5,7 +5,7 @@
  
   <h3 align="center">Manga top</h3>
   <p align="center">
-    Web applicaton for the review of mangas and comics, built with Ruby on Rails.
+     Web application to review mangas and comics, built with Ruby on Rails. 
     <br />
     <a href="#table-of-contents"><strong>Explore the docs »</strong></a>
     <br />
