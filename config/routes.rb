@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   post    '/comment',       to: 'comments#create'
   post    '/vote',          to: 'votes#create'
   delete  '/unvote',        to: 'votes#destroy'
