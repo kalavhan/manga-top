@@ -4,13 +4,15 @@
     <title>MangaTop</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': Rails.env.production? ? "reload" : "" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": Rails.env.production? ? "reload" : "" %>
     <%= javascript_include_tag 'application' %>
+    <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body data-controller="livereload">
     <%= render 'layouts/header' %>
     <%= yield %>
   </body>
